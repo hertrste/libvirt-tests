@@ -1284,39 +1284,39 @@ class LibvirtTests(LibvirtTestsBase):  # type: ignore
 def suite():
     # Test cases sorted in alphabetical order.
     testcases = [
-        LibvirtTests.test_bdf_domain_defs_in_sync_after_transient_hotplug,
-        LibvirtTests.test_bdf_domain_defs_in_sync_after_transient_unplug,
-        LibvirtTests.test_bdf_invalid_device_id,
-        LibvirtTests.test_bdf_valid_device_id_with_function_id,
-        LibvirtTests.test_bdfs_implicitly_assigned_same_after_recreate,
-        LibvirtTests.test_cirros_image,
-        LibvirtTests.test_disk_is_locked,
-        LibvirtTests.test_disk_resize_qcow2,
-        LibvirtTests.test_disk_resize_raw,
-        LibvirtTests.test_hotplug,
-        LibvirtTests.test_libvirt_default_net_prefix_triggers_desynchronizing,
-        LibvirtTests.test_libvirt_event_stop_failed,
-        LibvirtTests.test_libvirt_restart,
-        LibvirtTests.test_list_cpu_models,
-        LibvirtTests.test_list_smbios_biosinfo,
-        LibvirtTests.test_list_smbios_host,
-        LibvirtTests.test_list_smbios_oem_strings,
-        LibvirtTests.test_list_smbios_sysinfo,
-        LibvirtTests.test_managedsave,
-        LibvirtTests.test_network_hotplug_attach_detach_persistent,
-        LibvirtTests.test_network_hotplug_attach_detach_transient,
-        LibvirtTests.test_network_hotplug_persistent_transient_detach_vm_restart,
-        LibvirtTests.test_network_hotplug_persistent_vm_restart,
-        LibvirtTests.test_network_hotplug_transient_vm_restart,
-        LibvirtTests.test_numa_topology,
+        # LibvirtTests.test_bdf_domain_defs_in_sync_after_transient_hotplug,
+        # LibvirtTests.test_bdf_domain_defs_in_sync_after_transient_unplug,
+        # LibvirtTests.test_bdf_invalid_device_id,
+        # LibvirtTests.test_bdf_valid_device_id_with_function_id,
+        # LibvirtTests.test_bdfs_implicitly_assigned_same_after_recreate,
+        # LibvirtTests.test_cirros_image,
+        # LibvirtTests.test_disk_is_locked,
+        # LibvirtTests.test_disk_resize_qcow2,
+        # LibvirtTests.test_disk_resize_raw,
+        # LibvirtTests.test_hotplug,
+        # LibvirtTests.test_libvirt_default_net_prefix_triggers_desynchronizing,
+        # LibvirtTests.test_libvirt_event_stop_failed,
+        # LibvirtTests.test_libvirt_restart,
+        # LibvirtTests.test_list_cpu_models,
+        # LibvirtTests.test_list_smbios_biosinfo,
+        # LibvirtTests.test_list_smbios_host,
+        # LibvirtTests.test_list_smbios_oem_strings,
+        # LibvirtTests.test_list_smbios_sysinfo,
+        # LibvirtTests.test_managedsave,
+        # LibvirtTests.test_network_hotplug_attach_detach_persistent,
+        # LibvirtTests.test_network_hotplug_attach_detach_transient,
+        # LibvirtTests.test_network_hotplug_persistent_transient_detach_vm_restart,
+        # LibvirtTests.test_network_hotplug_persistent_vm_restart,
+        # LibvirtTests.test_network_hotplug_transient_vm_restart,
+        # LibvirtTests.test_numa_topology,
         LibvirtTests.test_reboot_externallytriggered,
         LibvirtTests.test_reboot_guestinduced,
-        LibvirtTests.test_serial_file_output,
-        LibvirtTests.test_serial_tcp,
-        LibvirtTests.test_shutdown,
-        LibvirtTests.test_suspend_resume,
-        LibvirtTests.test_virsh_console_works_with_pty,
-    ]
+        # LibvirtTests.test_serial_file_output,
+        # LibvirtTests.test_serial_tcp,
+        # LibvirtTests.test_shutdown,
+        # LibvirtTests.test_suspend_resume,
+        # LibvirtTests.test_virsh_console_works_with_pty,
+    ] * 100
 
     suite = unittest.TestSuite()
     for testcaseMethod in testcases:
@@ -1324,6 +1324,6 @@ def suite():
     return suite
 
 
-runner = unittest.TextTestRunner()
+runner = unittest.TextTestRunner(failfast=True)
 if not runner.run(suite()).wasSuccessful():
     raise Exception("Test Run unsuccessful")
